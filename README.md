@@ -16,4 +16,7 @@ index-2.html-The page used to render the products
 form2.html-The page used to give inputs for new products
 sketches.html-The page used to render the sketches
 
+The theme we chose to work on is 'CUSTOMER DELIGHT'.
+Ensuring a smooth, hassle-free user experience is a key feature for any ecommerce site to succeed. Many a times there may arise a situation where the user may get frustrated by endless search of a particular style they want. This frustration may eventually lead to loss of interest while shopping. Our solution here closes this gap between the user and website to ensure a smooth and a unique experience.
+
 
