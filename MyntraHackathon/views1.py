@@ -42,11 +42,6 @@ product_Sketch = [sketch1,sketch2,sketch3]
 
 
 def open(request):
-    # all_entries = SavedProducts.objects.all()
-    # print(all_entries)
-    # SavedProducts.objects.all().delete()
-    # all_entries = SavedProducts.objects.all()
-    # print(all_entries)
     return render(request,'index.html')
 
 
