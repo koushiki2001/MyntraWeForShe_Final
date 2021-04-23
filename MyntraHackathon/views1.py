@@ -129,8 +129,8 @@ def check_results(request):
             
             #since we are using TM_COEFF_NORMED method so we consider the max_loc 
             #the sketch for which the max_loc is the least is considered to be
-            #the right fit for the product and accordingly the product is being assigned a tag
-            
+            #the best fit for the product and accordingly the product is being assigned a tag
+            #corresponding to the sketch type
             if(prev==0):
                 prev=max_val
            
@@ -170,7 +170,7 @@ def showSketches(request):
 
 #When the user clicks on the view button attached to the sketches this function is invoked
 #This function matches the tags assigned to the products by the system to the tags of the sketches
-#and helps find the best fit products for the user.
+#and displays the matched products to the user.
 def findTops(request):
 
     global savedProductsList
