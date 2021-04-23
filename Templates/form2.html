@@ -1,0 +1,90 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
+
+
+
+
+
+
+
+<!-- Custom styles for this template -->
+<link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+
+
+<body>
+
+
+
+<header>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mr-auto" href="#"><img src="/static/img/m.png" height="30" width="41"></a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item "><a class="nav-link" href="./index"><span class="fa fa-home fa-lg"></span> Home</a></li>
+            
+                    <li class="nav-item active"><a class="nav-link" href="./up"><span class="fa fa-info fa-lg"></span> Admin_Section</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./products"><span class="fa fa-info fa-lg"></span> Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                </ul>
+                <span class="navbar-text">
+                    <a id="login">
+                    <span class="fa fa-sign-in"></span> Login</a>
+                </span>
+            </div>
+        </div>
+    </nav>
+</header>
+<br><br><br><br>
+{% block content %}
+<div class="row row-content" style="padding-left: 150pt;">
+    <div class="col-12">
+    <h3>Add new product <span class="fa fa-hand-o-down"></span></h3>
+    <br />
+    </div>
+    <div class="col-12 col-md-9">
+  <form method="post" enctype="multipart/form-data">
+    <div class="form-group row">
+        <label for="name" class="col-md-2 col-form-label">Name </label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Brand Name">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="points" class="col-md-2 col-form-label">Price </label>
+        <div class="col-md-10">
+            <input type="range" name="price" id="price" value="0" min="0" max="1000" data-show-value="true">
+        </div>
+    </div>
+    {% csrf_token %}
+    <input type="file" name="myfile">
+    <button type="submit" class="btn btn-danger">Upload</button>
+  </form>
+</div>
+</div>
+  <br>
+  <div style="margin-left: 35%;">
+  {% if uploaded_file_url %}
+    <a href="/results"><input type="submit" class="btn btn-warning" value="Check Results" ></a>
+  {% endif %}
+</div>
+  
+{% endblock %}
